@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title>Bourne To Climb Tree Service</title>
+  <desc>Open Graph image for Bourne To Climb Tree Service highlighting Durham Region tree care</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667EEA" />
+      <stop offset="50%" stop-color="#764BA2" />
+      <stop offset="100%" stop-color="#22C55E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="48" />
+  <g fill="#ffffff" fill-opacity="0.9">
+    <text x="100" y="230" font-size="72" font-weight="700" font-family="'Inter', sans-serif">Bourne To Climb</text>
+    <text x="100" y="310" font-size="48" font-weight="600" font-family="'Inter', sans-serif">Professional Tree Care</text>
+    <text x="100" y="390" font-size="32" font-weight="500" font-family="'Inter', sans-serif">Serving Oshawa · Courtice · Clarington</text>
+    <text x="100" y="470" font-size="28" font-weight="500" font-family="'Inter', sans-serif">Call 905-449-9019 for a free quote</text>
+  </g>
+  <circle cx="960" cy="220" r="140" fill="#ffffff" fill-opacity="0.15" />
+  <circle cx="1030" cy="410" r="90" fill="#ffffff" fill-opacity="0.08" />
+</svg>
