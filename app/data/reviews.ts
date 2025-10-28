@@ -1,6 +1,6 @@
 export type Review = {
   id: string
-  source: "Reddit" | "Industry Oversight" | "WhoDoYou" | "Google" | "Facebook"
+  source: "Homeowner" | "Industry Oversight" | "WhoDoYou" | "Google" | "Facebook"
   author: string
   rating: number
   title: string
@@ -14,14 +14,14 @@ export type Review = {
 export const featuredReviews: Review[] = [
   {
     id: "reddit-1",
-    source: "Reddit",
-    author: "LocalCedar",
+    source: "Homeowner",
+    author: "Josh Byberg",
     rating: 5,
     title: "Honest and friendly",
     service: "Tree Removal & Cleanup",
     text:
       "Dustin was fair, fast, and honest. He walked us through the plan, handled the removal without disturbing the neighbors, and left the yard cleaner than when he started.",
-    location: "Courtice",
+    location: "Oshawa",
     date: "2024-06-12",
     url: "https://www.reddit.com/r/Oshawa/",
   },

@@ -12,7 +12,6 @@ const categories = [
   { value: "Tree Removal", label: "Tree Removal" },
   { value: "Pruning", label: "Pruning" },
   { value: "Stump Grinding", label: "Stump Grinding" },
-  { value: "Before/After", label: "Before / After" },
   { value: "Emergency", label: "Emergency" },
 ]
 
@@ -72,18 +71,13 @@ export function GalleryGrid() {
       })}
       <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border/60 bg-surface/80 p-6">
         <div className="text-sm text-muted-foreground">
-          Want to see more? We share daily stories and before/after reels on
-          Instagram and YouTube.
+          Want to see more? We share daily stories and project highlights on
+          Instagram.
         </div>
         <div className="flex gap-3">
           <Button asChild>
             <Link href="https://www.instagram.com/123_btc" target="_blank">
               Instagram
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="https://www.youtube.com/@btc-trees" target="_blank">
-              YouTube Channel
             </Link>
           </Button>
         </div>

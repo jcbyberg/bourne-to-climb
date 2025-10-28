@@ -26,7 +26,7 @@ export function GalleryPreviewSection() {
       <Container className="space-y-12">
         <SectionHeading
           eyebrow="Gallery"
-          title="See our craftsmanship in action"
+          title="Working on an island in the Muskokas"
           description="Recent removals, pruning transformations, and clean stump grinds. Follow @123_btc on Instagram for daily updates."
         />
 
@@ -47,6 +47,9 @@ export function GalleryPreviewSection() {
                   fill
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover transition duration-500 group-hover:scale-105"
+                  style={{
+                    objectPosition: item.objectPosition ?? "center center",
+                  }}
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/20 to-transparent p-4 text-white opacity-0 transition group-hover:opacity-100">
                   <p className="text-sm font-semibold">{item.service}</p>
@@ -71,6 +74,9 @@ export function GalleryPreviewSection() {
                     fill
                     sizes="(min-width: 1280px) 1024px, 100vw"
                     className="object-cover"
+                    style={{
+                      objectPosition: selectedItem.objectPosition ?? "center center",
+                    }}
                   />
                 </div>
                 <div className="space-y-1 px-1 text-sm text-muted-foreground">

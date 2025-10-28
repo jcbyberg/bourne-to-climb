@@ -14,7 +14,6 @@ import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { ContactFormSection } from "@/components/sections/contact-form"
-import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Contact Bourne To Climb Tree Service | Free Quotes",
@@ -33,7 +32,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="bg-gradient-to-br from-primary/5 via-background to-background">
-        <Container className="space-y-6 py-20 sm:py-24">
+        <Container className="space-y-6 pt-12 pb-20 sm:pt-16 sm:pb-24">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">
             Contact
           </p>
@@ -45,18 +44,6 @@ export default function ContactPage() {
             reach out personally with next steps, pricing, and scheduling
             availability.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}>
-                Call {siteConfig.phone}
-              </Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href={`mailto:${siteConfig.email}`}>
-                Email {siteConfig.email}
-              </Link>
-            </Button>
-          </div>
         </Container>
       </section>
 

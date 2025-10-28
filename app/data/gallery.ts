@@ -2,58 +2,101 @@ export type GalleryItem = {
   id: string
   src: string
   alt: string
-  category: "Tree Removal" | "Pruning" | "Stump Grinding" | "Before/After" | "Emergency"
+  category: "Tree Removal" | "Pruning" | "Stump Grinding" | "Emergency"
   location: string
   service: string
+  objectPosition?: string
 }
 
 export const galleryItems: GalleryItem[] = [
   {
     id: "gallery-1",
-    src: "https://images.unsplash.com/photo-1522293712270-eba0736b9610?auto=format&fit=crop&w=1200&q=80",
-    alt: "Climber rigging a large maple tree for sectional removal",
+    src: "/images/gallery/image1.jpg",
+    alt: "Arborist in aerial boom lift performing high-reach sectional removal of a dead ash at the woodlot edge",
     category: "Tree Removal",
-    location: "Courtice, ON",
-    service: "Sectional removal over home",
+    location: "Oshawa, ON",
+    service: "Aerial sectional removal of dead ash near property line",
+    objectPosition: "center top",
   },
   {
     id: "gallery-2",
-    src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80",
-    alt: "Crew stump grinding in a backyard with wood chips",
-    category: "Stump Grinding",
-    location: "Oshawa, ON",
-    service: "Fence line stump grinding",
+    src: "/images/gallery/Image 2.jpg",
+    alt: "Fresh wood chips spread beneath mature trees after brush clearing and on-site chipping along a fence line",
+    category: "Tree Removal",
+    location: "Courtice, ON",
+    service: "On-site chipping and mulch installation",
   },
   {
     id: "gallery-3",
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Freshly pruned cedar hedge",
-    category: "Pruning",
-    location: "Bowmanville, ON",
-    service: "Canopy lift & hedge trim",
-  },
-  {
-    id: "gallery-4",
-    src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-    alt: "Before and after tree removal showing clear yard",
-    category: "Before/After",
-    location: "Clarington, ON",
-    service: "Backyard oak removal",
+    src: "/images/gallery/image 14v2.jpg",
+    alt: "Arborist climber secured with spurs and flipline, topping a lakeside conifer during sectional removal (360° tiny-planet view)",
+    category: "Tree Removal",
+    location: "Kawartha Lakes, ON",
+    service: "Technical sectional removal at cottage property",
   },
   {
     id: "gallery-5",
-    src: "https://images.unsplash.com/photo-1563306406-17ea67b9c081?auto=format&fit=crop&w=1200&q=80",
-    alt: "Emergency response removing storm-damaged limb",
+    src: "/images/gallery/Image 5.jpg",
+    alt: "Crew chipping storm-damaged limbs into a tow-behind chipper, loading a dump trailer during residential post-storm cleanup",
     category: "Emergency",
     location: "Oshawa, ON",
-    service: "Storm response",
+    service: "Emergency brush removal, on-site chipping, and debris hauling",
   },
   {
     id: "gallery-6",
-    src: "https://images.unsplash.com/photo-1522158637959-30385a09e0da?auto=format&fit=crop&w=1200&q=80",
-    alt: "Crew performing structural pruning on mature tree",
+    src: "/images/gallery/Image 6.jpg",
+    alt: "Arborist climber positioned on a long lateral limb performing end-weight reduction with a rigging line for controlled cuts over a backyard",
     category: "Pruning",
     location: "Whitby, ON",
-    service: "Structural pruning",
+    service: "Crown thinning and end-weight reduction over roofline",
   },
+  {
+    id: "gallery-7",
+    src: "/images/gallery/Image 7.jpg",
+    alt: "Crew using an Alaskan-style chainsaw mill to slab a large hardwood trunk into live-edge sections after a residential tree removal",
+    category: "Tree Removal",
+    location: "Courtice, ON",
+    service: "On-site chainsaw milling and slab cutting for reuse",
+  },
+  {
+    id: "gallery-8",
+    src: "/images/gallery/Image 8.jpg",
+    alt: "Stihl chainsaw with long bar resting on a freshly milled live-edge hardwood slab from urban tree salvage",
+    category: "Stump Grinding",
+    location: "Oshawa, ON",
+    service: "Chainsaw milling and slab preparation for reuse",
+  },
+  {
+    id: "gallery-9",
+    src: "/images/gallery/image 9.jpg",
+    alt: "Poolside evergreens after selective pruning and debris cleanup around a rock-waterfall feature",
+    category: "Pruning",
+    location: "Oshawa, ON",
+    service: "Poolside clearance pruning, hedge shaping, and debris cleanup",
+  },
+  {
+    id: "gallery-11",
+    src: "/images/gallery/image 11.jpg",
+    alt: "Limb performing end-weight reduction with a rigging line for controlled cuts over a backyard",
+    category: "Tree Removal",
+    location: "Courtice, ON",
+    service: "Crown thinning and end-weight reduction over roofline",
+  },
+  {
+    id: "gallery-12",
+    src: "/images/gallery/image 12.jpg",
+    alt: "Rigging lines secured to a dead hardwood while sections are cut and lowered during controlled removal near overhead utility wires",
+    category: "Emergency",
+    location: "Clarington, ON",
+    service: "Rigged sectional removal with utility line clearance",
+  },
+  {
+    id: "gallery-13",
+    src: "/images/gallery/image 13.jpg",
+    alt: "Detailed view of a clean stump grind flush with the lawn",
+    category: "Stump Grinding",
+    location: "Bowmanville, ON",
+    service: "Precision stump grinding",
+  },
+  
 ]

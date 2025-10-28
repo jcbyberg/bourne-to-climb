@@ -7,7 +7,7 @@ import { GalleryGrid } from "@/components/sections/gallery-grid"
 export const metadata: Metadata = {
   title: "Gallery | Tree Removal, Pruning & Stump Grinding Projects",
   description:
-    "Browse recent work from Bourne To Climb Tree Service. See before/after removals, hedge restorations, stump grinding, and emergency storm response projects across Durham Region.",
+    "Browse recent work from Bourne To Climb Tree Service. See removals, hedge restorations, stump grinding, and emergency storm response projects across Durham Region.",
 }
 
 export default function GalleryPage() {
@@ -34,7 +34,7 @@ export default function GalleryPage() {
           <SectionHeading
             eyebrow="Project Highlights"
             title="Filter by service to see similar projects"
-            description="Select a category to view tree removals, pruning, stump grinding, emergency response, or before & after transformations."
+            description="Select a category to view tree removals, pruning, stump grinding, or emergency response work."
             align="left"
           />
           <div className="mt-10">

@@ -113,16 +113,16 @@ export function HeroSection() {
           </div>
           <div className="grid gap-2 text-sm text-white/80">
             <div className="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3">
-              <span>Maple removal over pool</span>
-              <span className="text-xs uppercase text-white/60">Courtice</span>
+              <span>Tree removals</span>
+              <span className="text-xs uppercase text-white/60"></span>
             </div>
             <div className="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3">
-              <span>8-stump grind package</span>
-              <span className="text-xs uppercase text-white/60">Clarington</span>
+              <span>Pruning / trimming incl. hedges</span>
+              <span className="text-xs uppercase text-white/60"></span>
             </div>
             <div className="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3">
-              <span>Cedar hedge restoration</span>
-              <span className="text-xs uppercase text-white/60">Oshawa</span>
+              <span>Stump grinding</span>
+              <span className="text-xs uppercase text-white/60"></span>
             </div>
           </div>
         </motion.aside>
