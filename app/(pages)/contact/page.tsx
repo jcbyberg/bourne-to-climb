@@ -37,7 +37,7 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Get your free quote within 24 hours
+            Get your free quote
           </h1>
           <p className="max-w-3xl text-lg text-muted-foreground sm:text-xl">
             Tell us about your tree project or storm concern and Dustin will

@@ -9,7 +9,7 @@ if (!resendApiKey) {
 export const resend = resendApiKey ? new Resend(resendApiKey) : null
 
 export const defaultFromEmail =
-  process.env.RESEND_FROM_EMAIL ?? "Bourne To Climb <no-reply@bournetoclimb.com>"
+  process.env.RESEND_FROM_EMAIL ?? "Bourne To Climb <no-reply@bournetoclimb.ca>"
 
 export const defaultToEmail =
-  process.env.RESEND_TO_EMAIL ?? "contact@bournetoclimb.com"
+  process.env.RESEND_TO_EMAIL ?? "dustin@bournetoclimb.ca"

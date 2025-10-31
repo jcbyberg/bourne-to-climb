@@ -1,23 +1,26 @@
-import type { Metadata, Viewport } from "next"
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google"
+import "./globals.css"
 
 import { siteConfig } from "@/config/site"
 import { SiteFooter } from "@/components/layout/footer"
 import { SiteHeader } from "@/components/layout/header"
 import { Toaster } from "@/components/ui/sonner"
 import { cn } from "@/lib/utils"
-import "./globals.css"
+
+import type { Metadata, Viewport } from "next"
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google"
 
 const heading = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-heading",
+  display: "swap",
 })
 
 const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bournetoclimb.com"
@@ -70,6 +73,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#0f2f25",
+  colorScheme: "light dark",
 }
 
 export default function RootLayout({
@@ -80,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
           sans.variable,
