@@ -27,8 +27,8 @@ export default function ContactPage() {
     <>
       {recaptchaSiteKey ? (
         <Script
-          id="recaptcha-enterprise"
-          src={`https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`}
+          id="recaptcha-loader"
+          src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
           strategy="afterInteractive"
         />
       ) : null}

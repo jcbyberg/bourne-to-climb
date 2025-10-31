@@ -32,15 +32,13 @@ type Attachment = {
 declare global {
   interface Window {
     grecaptcha?: {
-      enterprise?: {
-        ready: (cb: () => void) => void
-        execute: (siteKey: string, options: { action: string }) => Promise<string>
-      }
+      ready: (cb: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
     }
   }
 }
 
-const RECAPTCHA_ACTION = "submit"
+const RECAPTCHA_ACTION = "contact_form"
 
 export function ContactFormSection() {
   const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
@@ -69,17 +67,14 @@ export function ContactFormSection() {
       throw new Error("reCAPTCHA is not configured.")
     }
 
-    const grecaptchaEnterprise = window.grecaptcha?.enterprise
-
-    if (!grecaptchaEnterprise?.execute || !grecaptchaEnterprise?.ready) {
+    const recaptcha = window.grecaptcha
+    if (!recaptcha?.execute || !recaptcha?.ready) {
       throw new Error("reCAPTCHA is still loading. Please try again.")
     }
 
-    await new Promise<void>((resolve) => {
-      grecaptchaEnterprise.ready(resolve)
-    })
+    await new Promise<void>((resolve) => recaptcha.ready(resolve))
 
-    return grecaptchaEnterprise.execute(recaptchaSiteKey, { action: RECAPTCHA_ACTION })
+    return recaptcha.execute(recaptchaSiteKey, { action: RECAPTCHA_ACTION })
   }, [recaptchaSiteKey])
 
   const handleFilesChange = useCallback(async (files: FileList | null) => {
@@ -278,7 +273,7 @@ export function ContactFormSection() {
       <div className="space-y-4">
         {recaptchaSiteKey ? (
           <p className="text-xs text-muted-foreground">
-            This site is protected by reCAPTCHA Enterprise and the Google{" "}
+            This site is protected by reCAPTCHA and the Google{" "}
             <a
               className="font-semibold text-primary underline-offset-4 hover:underline"
               href="https://policies.google.com/privacy"
@@ -300,7 +295,7 @@ export function ContactFormSection() {
           </p>
         ) : (
           <p className="text-sm text-destructive">
-            reCAPTCHA Enterprise is not configured. Please contact the site owner.
+            reCAPTCHA is not configured. Please contact the site owner.
           </p>
         )}
 

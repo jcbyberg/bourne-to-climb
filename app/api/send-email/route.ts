@@ -18,20 +18,17 @@ export async function POST(request: Request) {
     const recaptchaToken =
       typeof body.recaptchaToken === "string" ? body.recaptchaToken : null
     const recaptchaAction =
-      typeof body.recaptchaAction === "string" ? body.recaptchaAction : "submit"
+      typeof body.recaptchaAction === "string" ? body.recaptchaAction : "contact_form"
     const parsed = contactFormSchema.parse(body)
 
     const attachments = Array.isArray(body.attachments)
       ? ((body.attachments as Attachment[]) || []).slice(0, 3)
       : []
 
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-    const recaptchaProjectId = process.env.RECAPTCHA_PROJECT_ID
-    const recaptchaApiKey = process.env.RECAPTCHA_API_KEY
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY
     const recaptchaMinScore = Number(process.env.RECAPTCHA_MIN_SCORE ?? "0.5")
-
-    if (!recaptchaSiteKey || !recaptchaProjectId || !recaptchaApiKey) {
-      console.error("reCAPTCHA Enterprise environment variables are missing.")
+    if (!recaptchaSecret) {
+      console.error("RECAPTCHA_SECRET_KEY is not set.")
       return NextResponse.json(
         { error: "reCAPTCHA is not configured." },
         { status: 500 },
@@ -45,29 +42,30 @@ export async function POST(request: Request) {
       )
     }
 
+    const verificationParams = new URLSearchParams({
+      secret: recaptchaSecret,
+      response: recaptchaToken,
+    })
+
+    const remoteIp =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null
+    if (remoteIp) {
+      verificationParams.set("remoteip", remoteIp)
+    }
+
     const recaptchaVerification = await fetch(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/${recaptchaProjectId}/assessments?key=${recaptchaApiKey}`,
+      "https://www.google.com/recaptcha/api/siteverify",
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({
-          event: {
-            token: recaptchaToken,
-            siteKey: recaptchaSiteKey,
-            expectedAction: recaptchaAction,
-          },
-        }),
+        body: verificationParams,
       },
     )
 
     if (!recaptchaVerification.ok) {
-      console.error(
-        "reCAPTCHA verification request failed.",
-        recaptchaVerification.status,
-        await recaptchaVerification.text(),
-      )
+      console.error("reCAPTCHA verification request failed.", recaptchaVerification.status)
       return NextResponse.json(
         { error: "Unable to verify reCAPTCHA. Please try again." },
         { status: 502 },
@@ -75,34 +73,37 @@ export async function POST(request: Request) {
     }
 
     const verificationResult = await recaptchaVerification.json()
-    const tokenProperties = verificationResult?.tokenProperties
-    if (!tokenProperties?.valid) {
-      console.warn("reCAPTCHA token invalid.", verificationResult)
+    if (!verificationResult.success) {
+      console.warn("reCAPTCHA verification unsuccessful.", verificationResult)
       return NextResponse.json(
         { error: "reCAPTCHA verification failed. Please try again." },
         { status: 400 },
       )
     }
 
-    if (tokenProperties.action !== recaptchaAction) {
-      console.warn(
-        "reCAPTCHA action mismatch.",
-        tokenProperties.action,
-        recaptchaAction,
-      )
+    if (
+      typeof verificationResult.action === "string" &&
+      verificationResult.action !== recaptchaAction
+    ) {
+      console.warn("reCAPTCHA action mismatch.", {
+        expected: recaptchaAction,
+        received: verificationResult.action,
+      })
       return NextResponse.json(
         { error: "reCAPTCHA verification failed. Please try again." },
         { status: 400 },
       )
     }
 
-    const score = Number(verificationResult?.riskAnalysis?.score ?? 0)
-    const minScore = Number.isFinite(recaptchaMinScore)
-      ? recaptchaMinScore
-      : 0.5
-
-    if (score < minScore) {
-      console.warn("reCAPTCHA score below threshold.", { score, minScore })
+    const score =
+      typeof verificationResult.score === "number" ? verificationResult.score : null
+    const minScore = Number.isFinite(recaptchaMinScore) ? recaptchaMinScore : 0.5
+    if (score === null || score < minScore) {
+      console.warn("reCAPTCHA score below threshold.", {
+        score,
+        minScore,
+        reasons: verificationResult["error-codes"] ?? [],
+      })
       return NextResponse.json(
         { error: "reCAPTCHA verification failed. Please try again later." },
         { status: 403 },
