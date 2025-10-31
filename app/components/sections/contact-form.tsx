@@ -29,7 +29,22 @@ type Attachment = {
   content: string
 }
 
+declare global {
+  interface Window {
+    grecaptcha?: {
+      enterprise?: {
+        ready: (cb: () => void) => void
+        execute: (siteKey: string, options: { action: string }) => Promise<string>
+      }
+    }
+  }
+}
+
+const RECAPTCHA_ACTION = "submit"
+
 export function ContactFormSection() {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  const [isRecaptchaLoading, setIsRecaptchaLoading] = useState(false)
   const {
     register,
     control,
@@ -48,6 +63,24 @@ export function ContactFormSection() {
   })
 
   const [attachments, setAttachments] = useState<Attachment[]>([])
+
+  const executeRecaptcha = useCallback(async () => {
+    if (!recaptchaSiteKey) {
+      throw new Error("reCAPTCHA is not configured.")
+    }
+
+    const grecaptchaEnterprise = window.grecaptcha?.enterprise
+
+    if (!grecaptchaEnterprise?.execute || !grecaptchaEnterprise?.ready) {
+      throw new Error("reCAPTCHA is still loading. Please try again.")
+    }
+
+    await new Promise<void>((resolve) => {
+      grecaptchaEnterprise.ready(resolve)
+    })
+
+    return grecaptchaEnterprise.execute(recaptchaSiteKey, { action: RECAPTCHA_ACTION })
+  }, [recaptchaSiteKey])
 
   const handleFilesChange = useCallback(async (files: FileList | null) => {
     if (!files) return
@@ -85,6 +118,18 @@ export function ContactFormSection() {
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
+      if (!recaptchaSiteKey) {
+        toast.error("reCAPTCHA is not configured. Please try again later.")
+        return
+      }
+
+      setIsRecaptchaLoading(true)
+      const recaptchaToken = await executeRecaptcha()
+
+      if (!recaptchaToken) {
+        throw new Error("No reCAPTCHA token received.")
+      }
+
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -93,6 +138,8 @@ export function ContactFormSection() {
         body: JSON.stringify({
           ...values,
           attachments,
+          recaptchaToken,
+          recaptchaAction: RECAPTCHA_ACTION,
         }),
       })
 
@@ -106,9 +153,15 @@ export function ContactFormSection() {
       setAttachments([])
     } catch (error) {
       console.error(error)
-      toast.error(
-        "Something went wrong sending your request. Please call us at 905-449-9019.",
-      )
+      const fallbackMessage =
+        "Something went wrong sending your request. Please call us at 905-449-9019."
+      if (error instanceof Error && error.message) {
+        toast.error(error.message)
+      } else {
+        toast.error(fallbackMessage)
+      }
+    } finally {
+      setIsRecaptchaLoading(false)
     }
   }
 
@@ -222,27 +275,61 @@ export function ContactFormSection() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-xs text-muted-foreground">
-          We&apos;ll respond within 24 hours. For emergencies, call{" "}
-          <a
-            className="font-semibold text-primary underline-offset-4 hover:underline"
-            href="tel:19054499019"
+      <div className="space-y-4">
+        {recaptchaSiteKey ? (
+          <p className="text-xs text-muted-foreground">
+            This site is protected by reCAPTCHA Enterprise and the Google{" "}
+            <a
+              className="font-semibold text-primary underline-offset-4 hover:underline"
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              className="font-semibold text-primary underline-offset-4 hover:underline"
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </p>
+        ) : (
+          <p className="text-sm text-destructive">
+            reCAPTCHA Enterprise is not configured. Please contact the site owner.
+          </p>
+        )}
+
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground">
+            We&apos;ll respond within 24 hours. For emergencies, call{" "}
+            <a
+              className="font-semibold text-primary underline-offset-4 hover:underline"
+              href="tel:19054499019"
+            >
+              905-449-9019
+            </a>
+            .
+          </p>
+          <Button
+            type="submit"
+            size="lg"
+            disabled={isSubmitting || isRecaptchaLoading || !recaptchaSiteKey}
           >
-            905-449-9019
-          </a>
-          .
-        </p>
-        <Button type="submit" size="lg" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <Loader2 className="size-4 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            "Send request"
-          )}
-        </Button>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="size-4 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              "Send request"
+            )}
+          </Button>
+        </div>
       </div>
     </form>
   )

@@ -1,14 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import {
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  MapPin,
-  PhoneCall,
-  Youtube,
-} from "lucide-react"
+import Script from "next/script"
+import { Clock, Facebook, Instagram, Linkedin, MapPin, PhoneCall } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
@@ -24,13 +17,22 @@ export const metadata: Metadata = {
 const socials = [
   { name: "Instagram", icon: Instagram, href: siteConfig.social.instagram },
   { name: "Facebook", icon: Facebook, href: siteConfig.social.facebook },
-  { name: "YouTube", icon: Youtube, href: siteConfig.social.youtube },
   { name: "LinkedIn", icon: Linkedin, href: siteConfig.social.linkedin },
 ]
+
+const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 export default function ContactPage() {
   return (
     <>
+      {recaptchaSiteKey ? (
+        <Script
+          id="recaptcha-enterprise"
+          src={`https://www.google.com/recaptcha/enterprise.js?render=${recaptchaSiteKey}`}
+          strategy="afterInteractive"
+        />
+      ) : null}
+
       <section className="bg-gradient-to-br from-primary/5 via-background to-background">
         <Container className="space-y-6 pt-12 pb-20 sm:pt-16 sm:pb-24">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">

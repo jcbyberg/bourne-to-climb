@@ -7,7 +7,6 @@ import {
   MailIcon,
   MapPinIcon,
   PhoneCallIcon,
-  YoutubeIcon,
 } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
@@ -17,7 +16,6 @@ import { Container } from "./container"
 const socials = [
   { name: "Instagram", icon: InstagramIcon, href: siteConfig.social.instagram },
   { name: "Facebook", icon: FacebookIcon, href: siteConfig.social.facebook },
-  { name: "YouTube", icon: YoutubeIcon, href: siteConfig.social.youtube },
   { name: "LinkedIn", icon: LinkedinIcon, href: siteConfig.social.linkedin },
 ]
 

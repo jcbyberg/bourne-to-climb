@@ -68,14 +68,14 @@ export default function AboutPage() {
               finish.
             </p>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://www.linkedin.com/in/dustin-bourne" target="_blank">
+              <a href="https://www.linkedin.com/in/dustin-bourne-a2363375/" target="_blank">
                 Connect on LinkedIn
               </a>
             </Button>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border/60 shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+              src="/images/gallery/image 14v2.jpg"
               alt="Owner Dustin Bourne standing next to professional tree equipment"
               fill
               sizes="(min-width: 1280px) 480px, 100vw"
