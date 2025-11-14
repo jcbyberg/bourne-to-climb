@@ -12,7 +12,7 @@ export const contactFormSchema = z.object({
         /^(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/.test(value),
       "Please provide a valid phone number",
     ),
-  service: z.enum(["removal", "pruning", "grinding", "emergency", "other"]),
+  service: z.enum(["removal", "pruning", "grinding", "storm", "other"]),
   message: z.string().min(10, "Message must be at least 10 characters long"),
 })
 
