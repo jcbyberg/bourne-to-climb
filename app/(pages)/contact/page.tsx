@@ -9,9 +9,18 @@ import { SectionHeading } from "@/components/layout/section-heading"
 import { ContactFormSection } from "@/components/sections/contact-form"
 
 export const metadata: Metadata = {
-  title: "Contact Bourne To Climb Tree Service | Free Quotes",
+  title: "Contact Bourne To Climb Tree Service | Free Quotes Oshawa, Courtice, Clarington",
   description:
-    "Request a free tree service quote from Bourne To Climb. Call 905-449-9019 or use the contact form for removals, pruning, stump grinding, and emergency service in Durham Region.",
+    "Request a free tree service quote from Bourne To Climb in Oshawa, Courtice, and Clarington. Call 905-449-9019 for emergency tree removal, pruning, stump grinding, and 24/7 storm response in Durham Region.",
+  keywords: [
+    "free tree service quote",
+    "tree removal quote Oshawa",
+    "emergency tree service Clarington",
+    "tree pruning estimate Courtice",
+    "stump grinding cost Durham Region",
+    "contact tree service",
+    "emergency tree removal 24/7",
+  ],
 }
 
 const socials = [

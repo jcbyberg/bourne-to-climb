@@ -9,9 +9,18 @@ import { StatsStrip } from "@/components/sections/stats"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "About Dustin Bourne & Bourne To Climb",
+  title: "About Dustin Bourne | Licensed Tree Service Arborist Oshawa",
   description:
-    "Meet Dustin Bourne, owner of Bourne To Climb Tree Service. Licensed, WSIB-covered arborist delivering safe removals, precise pruning, and spotless cleanups for Durham Region.",
+    "Meet Dustin Bourne, certified arborist and owner of Bourne To Climb Tree Service. Licensed, WSIB-insured, delivering professional tree removals, pruning, and stump grinding throughout Oshawa, Courtice, and Clarington.",
+  keywords: [
+    "Dustin Bourne arborist",
+    "certified tree service Oshawa",
+    "licensed tree removal Durham Region",
+    "WSIB insured tree service",
+    "professional tree climber",
+    "certified arborist Clarington",
+    "tree service owner",
+  ],
 }
 
 const certifications = [

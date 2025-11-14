@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import Script from "next/script"
 
 import { services } from "@/data/services"
 import { faqs } from "@/data/faqs"
+import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { Button } from "@/components/ui/button"
@@ -15,14 +17,92 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Tree Services in Durham Region | Removals, Pruning & Stump Grinding",
+  title: "Tree Services Oshawa, Courtice, Clarington | Removal, Pruning, Stump Grinding",
   description:
-    "Discover Bourne To Climb Tree Service offerings: safe tree removals, precision pruning, stump grinding, and 24/7 emergency storm cleanup across Oshawa, Courtice, and Clarington.",
+    "Professional tree services in Durham Region: safe removals, precision pruning, stump grinding, and 24/7 emergency storm cleanup in Oshawa, Courtice, and Clarington. Owner-operated, fully insured.",
+  keywords: [
+    "tree removal Oshawa",
+    "tree pruning Courtice",
+    "stump grinding Clarington",
+    "tree service Durham Region",
+    "emergency tree removal",
+    "tree trimming near me",
+    "certified arborist services",
+    "professional tree care",
+    "storm damage cleanup",
+  ],
 }
 
 export default function ServicesPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bournetoclimb.com"
+
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteUrl}/services`,
+      },
+    ],
+  }
+
+  // Service schemas for each service offering
+  const serviceSchemas = services.map((service) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteUrl}/services#${service.id}`,
+    name: service.name,
+    description: service.description,
+    url: `${siteUrl}/services#${service.id}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteUrl,
+      telephone: siteConfig.phone,
+      areaServed: ["Oshawa", "Courtice", "Clarington"],
+    },
+    areaServed: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: 43.8509,
+        longitude: -79.0204,
+      },
+      geoRadius: "25000",
+    },
+    priceRange: "$$",
+    image: `${siteUrl}/og-image.png`,
+  }))
+
   return (
     <>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        strategy="afterInteractive"
+      />
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": serviceSchemas,
+          }),
+        }}
+        strategy="afterInteractive"
+      />
       <section className="bg-gradient-to-br from-primary/5 via-background to-background">
         <Container className="space-y-6 py-20 text-center sm:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary/80">

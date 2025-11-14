@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 
 import type { Metadata, Viewport } from "next"
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google"
+import Script from "next/script"
 
 const heading = Manrope({
   subsets: ["latin"],
@@ -81,8 +82,101 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bournetoclimb.com"
+
+  // LocalBusiness Schema for Google Local Search
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": siteUrl,
+    name: siteConfig.name,
+    url: siteUrl,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "76 Cromwell Ave",
+      addressLocality: "Oshawa",
+      addressRegion: "ON",
+      postalCode: "L1J 4T6",
+      addressCountry: "CA",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 43.8509,
+      longitude: -79.0204,
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Oshawa",
+      },
+      {
+        "@type": "City",
+        name: "Courtice",
+      },
+      {
+        "@type": "City",
+        name: "Clarington",
+      },
+    ],
+    sameAs: [
+      siteConfig.social.facebook,
+      siteConfig.social.instagram,
+      siteConfig.social.youtube,
+      siteConfig.social.linkedin,
+    ],
+    description: siteConfig.description,
+    image: `${siteUrl}/og-image.png`,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "07:00",
+      closes: "19:00",
+    },
+    priceRange: "$$",
+    serviceArea: {
+      "@type": "City",
+      name: "Durham Region, ON",
+    },
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          strategy="afterInteractive"
+        />
+        {/* Google Analytics 4 */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                    page_path: window.location.pathname,
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: true,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
+      </head>
       <body
         suppressHydrationWarning
         className={cn(

@@ -8,9 +8,18 @@ import { SectionHeading } from "@/components/layout/section-heading"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Customer Reviews | Bourne To Climb Tree Service",
+  title: "5-Star Reviews | Bourne To Climb Tree Service Oshawa, Courtice, Clarington",
   description:
-    "Read verified testimonials for Bourne To Climb Tree Service from Reddit, Industry Oversight, WhoDoYou, Google, and Facebook clients across Durham Region.",
+    "Read verified customer reviews and testimonials for Bourne To Climb Tree Service. Trusted by homeowners in Oshawa, Courtice, Clarington for professional tree removal, pruning, stump grinding, and emergency services.",
+  keywords: [
+    "tree service reviews Oshawa",
+    "Bourne To Climb reviews",
+    "tree removal testimonials Durham Region",
+    "5 star tree service Courtice",
+    "customer reviews tree pruning",
+    "emergency tree service reviews",
+    "best tree service Clarington",
+  ],
 }
 
 export default function ReviewsPage() {

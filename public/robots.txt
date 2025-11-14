@@ -1,0 +1,32 @@
+# Robots.txt for Bourne To Climb Tree Service
+# https://www.robotstxt.org/
+
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.next/
+Disallow: /admin/
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific directives
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Allow: /public/
+
+# Sitemap location
+Sitemap: https://www.bournetoclimb.com/sitemap.xml
+Sitemap: https://www.bournetoclimb.com/sitemap-mobile.xml
