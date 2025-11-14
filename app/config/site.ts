@@ -2,12 +2,12 @@ export const siteConfig = {
   name: "Bourne To Climb Tree Service",
   shortName: "BTC Trees",
   description:
-    "Owner-operated tree removals, precise pruning, stump grinding, and emergency response across Oshawa, Courtice, and Clarington.",
+    "Owner-operated tree removals, precise pruning, stump grinding, and storm damage cleanup across Oshawa, Courtice, and Clarington.",
   phone: "905-449-9019",
   email: "contact@bournetoclimb.com",
   address: "76 Cromwell Ave, Oshawa, ON L1J 4T6",
   serviceAreas: ["Oshawa", "Courtice", "Clarington"],
-  emergencyHours: "24/7 Emergency Service",
+  emergencyHours: "Storm Damage Cleanup & Prevention",
   social: {
     instagram: "https://www.instagram.com/123_btc",
     facebook: "https://www.facebook.com/bourneto.climb",

@@ -97,18 +97,18 @@ export const services: ServiceCategory[] = [
   },
   {
     id: "emergency",
-    name: "Storm & Emergency Cleanup",
+    name: "Storm Damage Cleanup",
     icon: Wind,
-    headline: "24/7 Emergency Response",
+    headline: "Storm Damage Cleanup & Prevention",
     description:
-      "Rapid response for storm damage, fallen limbs, and unsafe trees threatening your property.",
+      "Professional storm damage cleanup and prevention services for fallen limbs and unsafe trees threatening your property.",
     highlights: [
-      "On-call day and night",
+      "Storm damage assessment and cleanup",
       "Securing hazardous hangers",
       "Coordination with utilities when needed",
     ],
     process: [
-      "Immediate on-site safety assessment",
+      "On-site safety assessment",
       "Stabilize hangers and downed limbs",
       "Sectional removal to relieve pressure",
       "Ground cleanup and debris disposal",
@@ -120,6 +120,6 @@ export const services: ServiceCategory[] = [
       "Headlamps & flood lighting",
       "Portable winches and come-alongs",
     ],
-    cta: "Request Emergency Assistance",
+    cta: "Request Storm Cleanup Assistance",
   },
 ]

@@ -24,7 +24,7 @@ const sans = Plus_Jakarta_Sans({
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bournetoclimb.com"
-const metadataTitle = "Tree Removal, Pruning & Emergency Service in Durham Region"
+const metadataTitle = "Tree Removal, Pruning & Storm Damage Cleanup in Durham Region"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "tree removal Oshawa",
     "tree trimming Clarington",
     "stump grinding Courtice",
-    "emergency tree service Durham Region",
+    "storm damage cleanup Durham Region",
     "Bourne To Climb Tree Service",
   ],
   category: "Home & Garden",

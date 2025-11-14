@@ -182,8 +182,8 @@ function formatService(service: ContactFormValues["service"]) {
       return "Pruning & Trimming"
     case "grinding":
       return "Stump Grinding"
-    case "emergency":
-      return "Emergency Service"
+    case "storm":
+      return "Storm Damage Cleanup"
     default:
       return "Other"
   }

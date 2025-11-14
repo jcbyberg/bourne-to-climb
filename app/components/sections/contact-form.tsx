@@ -301,7 +301,7 @@ export function ContactFormSection() {
 
         <div className="flex items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            We&apos;ll respond within 24 hours. For emergencies, call{" "}
+            We&apos;ll respond within 24 hours. For storm damage, call{" "}
             <a
               className="font-semibold text-primary underline-offset-4 hover:underline"
               href="tel:19054499019"

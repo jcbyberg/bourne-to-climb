@@ -11,15 +11,15 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "About Dustin Bourne & Bourne To Climb",
   description:
-    "Meet Dustin Bourne, owner of Bourne To Climb Tree Service. Licensed, WSIB-covered arborist delivering safe removals, precise pruning, and spotless cleanups for Durham Region.",
+    "Meet Dustin Bourne, owner of Bourne To Climb Tree Service. Licensed arborist with $5 million liability insurance delivering safe removals, precise pruning, and spotless cleanups for Durham Region.",
 }
 
 const certifications = [
   {
     icon: ShieldCheck,
-    title: "Fully insured & WSIB covered",
+    title: "$5 Million Liability Insurance",
     description:
-      "Comprehensive liability insurance and WSIB coverage for residential and commercial projects.",
+      "$5 million in commercial liability insurance coverage for residential and commercial projects.",
   },
   {
     icon: CheckCircle2,
@@ -35,9 +35,9 @@ const certifications = [
   },
   {
     icon: Zap,
-    title: "Emergency ready",
+    title: "Storm damage specialists",
     description:
-      "Storm kits, lighting, and rigging gear ready for day or night emergency response.",
+      "Storm kits, lighting, and rigging gear ready for storm damage cleanup and prevention services.",
   },
 ]
 
@@ -46,7 +46,7 @@ const differentiators = [
   "Professional-grade equipment sized for tight suburban access.",
   "We communicate clearly, arrive on time, and leave spaces cleaner than we found them.",
   "Competitive, transparent pricing with itemized quotes.",
-  "Available day or night when storms bring unexpected damage.",
+  "Storm damage cleanup and storm prevention services available.",
 ]
 
 export default function AboutPage() {
@@ -107,9 +107,9 @@ export default function AboutPage() {
               complete, we rake, blow, and leave the space ready to enjoy.
             </p>
             <p>
-              Whether it’s a tight removal over a pool, a hedge restoration, or a
-              middle-of-the-night storm response, Dustin leads the crew with the
-              right equipment, detailed planning, and a commitment to safety.
+              Whether it's a tight removal over a pool, a hedge restoration, or
+              storm damage cleanup, Dustin leads the crew with the right equipment,
+              detailed planning, and a commitment to safety.
             </p>
           </div>
 

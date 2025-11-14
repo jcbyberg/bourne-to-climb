@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Tree Services in Durham Region | Removals, Pruning & Stump Grinding",
   description:
-    "Discover Bourne To Climb Tree Service offerings: safe tree removals, precision pruning, stump grinding, and 24/7 emergency storm cleanup across Oshawa, Courtice, and Clarington.",
+    "Discover Bourne To Climb Tree Service offerings: safe tree removals, precision pruning, stump grinding, and storm damage cleanup across Oshawa, Courtice, and Clarington.",
 }
 
 export default function ServicesPage() {
@@ -34,7 +34,7 @@ export default function ServicesPage() {
           </h1>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground sm:text-xl">
             From sectional removals in tight yards to multi-trunk pruning and
-            24/7 storm response, we bring the right equipment, crew, and cleanup
+            storm damage cleanup, we bring the right equipment, crew, and cleanup
             to protect your property.
           </p>
           <Button size="lg" asChild>

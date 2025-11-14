@@ -44,10 +44,10 @@ export function SiteFooter() {
             </p>
             <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase text-muted-foreground">
               <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">
-                WSIB Covered
+                $5M Liability Insurance
               </span>
               <span className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">
-                Emergency Service
+                Storm Damage Cleanup
               </span>
               <span className="rounded-full bg-muted px-3 py-1">
                 Serving {siteConfig.serviceAreas.join(" | ")}

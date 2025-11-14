@@ -54,7 +54,7 @@ export function HeroSection() {
             className="max-w-xl text-lg text-white/80 sm:text-xl"
           >
             Owner-operated and fully insured. Safe removals, precise pruning,
-            clean finishes, and 24/7 emergency response across Durham Region.
+            clean finishes, and storm damage cleanup across Durham Region.
           </motion.p>
 
           <motion.div
@@ -85,10 +85,10 @@ export function HeroSection() {
           >
             <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 shadow-lg backdrop-blur">
               <ShieldCheck className="size-4 text-primary-foreground" />
-              Licensed, insured &amp; WSIB covered
+              $5 Million Liability Insurance
             </span>
             <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 shadow-lg backdrop-blur">
-              24/7 Emergency Service
+              Storm Damage Cleanup
             </span>
           </motion.div>
         </motion.div>

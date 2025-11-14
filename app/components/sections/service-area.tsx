@@ -43,10 +43,10 @@ export function ServiceAreaSection() {
           <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-border/60 bg-surface/80 p-6">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-                Emergency Response
+                Storm Damage Services
               </p>
               <p className="text-lg font-semibold text-foreground">
-                We&apos;re on call 24/7 when storms hit.
+                Storm damage cleanup and prevention available.
               </p>
             </div>
             <Button asChild>

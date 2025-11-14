@@ -148,11 +148,10 @@ export default function TermsPage() {
         without liability beyond refunding any unused deposit.
       </p>
 
-      <h2 className="text-2xl font-bold sm:text-3xl">13. Insurance &amp; WSIB</h2>
+      <h2 className="text-2xl font-bold sm:text-3xl">13. Insurance</h2>
       <p>
-        We maintain commercial general liability insurance and workers’ compensation coverage (WSIB) as required by
-        Ontario law. Certificates are available upon request. You agree not to direct unsafe work or request methods
-        that would violate safety standards.
+        We maintain $5 million in commercial general liability insurance as required by Ontario law. Certificates are
+        available upon request. You agree not to direct unsafe work or request methods that would violate safety standards.
       </p>
 
       <h2 className="text-2xl font-bold sm:text-3xl">14. Limited Warranty (Workmanship)</h2>

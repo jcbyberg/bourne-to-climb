@@ -10,9 +10,9 @@ export const faqs: FaqItem[] = [
       "Every tree is different. We provide free on-site quotes that account for tree size, location, obstacles, and cleanup requirements. Simple removals often start around $450, while complex rigging work is quoted on-site.",
   },
   {
-    question: "Are you insured and covered by WSIB?",
+    question: "What insurance coverage do you carry?",
     answer:
-      "Yes. Bourne To Climb is fully insured and WSIB-covered. We can supply certificates for residential and commercial jobs before work begins.",
+      "Yes. Bourne To Climb carries $5 million in commercial liability insurance. We can supply certificates for residential and commercial jobs before work begins.",
   },
   {
     question: "How long does a typical job take?",
@@ -30,8 +30,8 @@ export const faqs: FaqItem[] = [
       "We coordinate with local utilities when required and follow Electrical Safety Authority guidelines. We can safely work around service drops and will advise when utility line drops are needed.",
   },
   {
-    question: "Do you offer emergency services?",
+    question: "Do you provide storm damage cleanup?",
     answer:
-      "Yes. We’re on call 24/7 for storm damage, fallen limbs, and risky hangers. Call 905-449-9019 for immediate assistance.",
+      "Yes. We provide storm damage cleanup and storm prevention services for fallen limbs and risky hangers. Call 905-449-9019 for assistance.",
   },
 ]

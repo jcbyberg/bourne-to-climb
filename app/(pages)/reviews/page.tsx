@@ -26,7 +26,7 @@ export default function ReviewsPage() {
           </h1>
           <p className="max-w-3xl text-lg text-muted-foreground sm:text-xl">
             See what clients across Durham Region say about our tree removals,
-            pruning, stump grinding, and emergency services.
+            pruning, stump grinding, and storm damage services.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild>

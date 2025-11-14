@@ -11,7 +11,7 @@ import { ContactFormSection } from "@/components/sections/contact-form"
 export const metadata: Metadata = {
   title: "Contact Bourne To Climb Tree Service | Free Quotes",
   description:
-    "Request a free tree service quote from Bourne To Climb. Call 905-449-9019 or use the contact form for removals, pruning, stump grinding, and emergency service in Durham Region.",
+    "Request a free tree service quote from Bourne To Climb. Call 905-449-9019 or use the contact form for removals, pruning, stump grinding, and storm damage cleanup in Durham Region.",
 }
 
 const socials = [
