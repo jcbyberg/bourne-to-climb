@@ -12,4 +12,4 @@ export const defaultFromEmail =
   process.env.RESEND_FROM_EMAIL ?? "Bourne To Climb <no-reply@bournetoclimb.ca>"
 
 export const defaultToEmail =
-  process.env.RESEND_TO_EMAIL ?? "dustin@bournetoclimb.ca"
+  process.env.RESEND_TO_EMAIL ?? "Bournetoclimb@gmail.com"
