@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { galleryItems } from "@/data/gallery"
+import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
+import { Instagram } from "lucide-react"
 
 export function GalleryPreviewSection() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -24,11 +26,25 @@ export function GalleryPreviewSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24">
       <Container className="space-y-12">
-        <SectionHeading
-          eyebrow="Gallery"
-          title="Working on an island in the Muskokas"
-          description="Recent removals, pruning transformations, and clean stump grinds. Follow @123_btc on Instagram for daily updates."
-        />
+        <SectionHeading eyebrow="Gallery" title="Arborist Projects – Completed with Care" />
+        <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-surface/70 p-6 lg:flex-row lg:items-center lg:gap-6">
+          <div className="flex flex-1 flex-col gap-2 text-base text-muted-foreground sm:text-lg">
+            <p>
+              Recent removals, pruning transformations, and clean stump grinds. Follow @btctrees on Instagram for daily updates.
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-primary/30 text-primary hover:bg-primary/10"
+            asChild
+          >
+            <Link href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
+              <Instagram className="size-4" />
+              Follow @btctrees
+            </Link>
+          </Button>
+        </div>
 
         <Dialog onOpenChange={(open) => !open && setSelectedId(null)}>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -97,11 +113,14 @@ export function GalleryPreviewSection() {
               Follow our work
             </p>
             <p className="text-lg font-semibold text-foreground">
-              Daily stories and project highlights @123_btc
+              Daily stories and project highlights @btctrees
             </p>
           </div>
           <Button variant="ghost" asChild>
-            <Link href="https://www.instagram.com/123_btc" target="_blank">
+            <Link
+              href="https://www.instagram.com/btctrees?igsh=ZDUwY3pycG52eWFz&utm_source=qr"
+              target="_blank"
+            >
               View more on Instagram →
             </Link>
           </Button>

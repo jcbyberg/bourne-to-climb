@@ -617,7 +617,7 @@ Homepage → [📞 Tap to Call] → Phone Call
 
 ### The Social Path (external)
 ```
-Homepage → Instagram Link → @123_btc → DM or Comment
+Homepage → Instagram Link → @btctrees → DM or Comment
 ```
 
 ---

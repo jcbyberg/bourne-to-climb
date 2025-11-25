@@ -9,7 +9,7 @@ export const siteConfig = {
   serviceAreas: ["Oshawa", "Courtice", "Clarington"],
   emergencyHours: "Storm Damage Cleanup & Prevention",
   social: {
-    instagram: "https://www.instagram.com/123_btc",
+    instagram: "https://www.instagram.com/btctrees?igsh=ZDUwY3pycG52eWFz&utm_source=qr",
     facebook: "https://www.facebook.com/bourneto.climb",
     youtube: "https://www.youtube.com/@btc-trees",
     linkedin: "https://www.linkedin.com/in/dustin-bourne",

@@ -198,7 +198,7 @@ NEXT_PUBLIC_EMAIL=contact@bournetoclimb.com
 NEXT_PUBLIC_ADDRESS="76 Cromwell Ave, Oshawa, ON L1J 4T6"
 
 # Social Media
-NEXT_PUBLIC_INSTAGRAM=https://www.instagram.com/123_btc
+NEXT_PUBLIC_INSTAGRAM=https://www.instagram.com/btctrees?igsh=ZDUwY3pycG52eWFz&utm_source=qr
 NEXT_PUBLIC_FACEBOOK=https://www.facebook.com/bourneto.climb
 NEXT_PUBLIC_YOUTUBE=https://www.youtube.com/@BTCtreesBournetoclimb
 NEXT_PUBLIC_LINKEDIN=https://www.linkedin.com/in/dustin-bourne

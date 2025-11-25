@@ -76,7 +76,10 @@ export function GalleryGrid() {
         </div>
         <div className="flex gap-3">
           <Button asChild>
-            <Link href="https://www.instagram.com/123_btc" target="_blank">
+            <Link
+              href="https://www.instagram.com/btctrees?igsh=ZDUwY3pycG52eWFz&utm_source=qr"
+              target="_blank"
+            >
               Instagram
             </Link>
           </Button>

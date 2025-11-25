@@ -188,7 +188,7 @@ bourne-to-climb/
   - 6-image grid from Instagram
   - Hover effects (scale, overlay)
   - Lightbox on click (Radix Dialog)
-  - CTA: "View More on Instagram" → @123_btc
+  - CTA: "View More on Instagram" → @btctrees
 </GalleryPreview>
 ```
 
@@ -326,7 +326,7 @@ bourne-to-climb/
       • Pruning
       • Stump Grinding
       • Before/After
-    - Images from Instagram (@123_btc)
+    - Images from Instagram (@btctrees)
     - Lightbox viewer (Radix Dialog)
     - Image metadata (location, service type)
   </GalleryGrid>
@@ -421,7 +421,7 @@ bourne-to-climb/
       </MapEmbed>
       
       <SocialLinks>
-        - Instagram: @123_btc
+        - Instagram: @btctrees
         - Facebook: facebook.com/bourneto.climb
         - YouTube: BTC trees Bourne to climb
         - LinkedIn: Dustin Bourne
@@ -795,7 +795,7 @@ NEXT_PUBLIC_EMAIL=contact@bournetoclimb.com
 NEXT_PUBLIC_ADDRESS="76 Cromwell Ave, Oshawa, ON L1J 4T6"
 
 # Social Media
-NEXT_PUBLIC_INSTAGRAM=https://www.instagram.com/123_btc
+NEXT_PUBLIC_INSTAGRAM=https://www.instagram.com/btctrees?igsh=ZDUwY3pycG52eWFz&utm_source=qr
 NEXT_PUBLIC_FACEBOOK=https://www.facebook.com/bourneto.climb
 NEXT_PUBLIC_YOUTUBE=https://www.youtube.com/@BTCtreesBournetoclimb
 NEXT_PUBLIC_LINKEDIN=https://www.linkedin.com/in/dustin-bourne

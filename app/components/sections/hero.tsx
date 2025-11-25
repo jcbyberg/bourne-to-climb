@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, PhoneCall, ShieldCheck, Sun } from "lucide-react"
+import { ArrowRight, Instagram, PhoneCall, ShieldCheck, Sun } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
@@ -70,6 +70,17 @@ export function HeroSection() {
             <Button variant="ghost" size="lg" className="border border-white/30 text-white hover:border-white/60" asChild>
               <Link href="/services">View Services</Link>
             </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/40 bg-white/10 text-white hover:bg-white/20"
+              asChild
+            >
+              <Link href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
+                <Instagram className="size-4" />
+                Follow
+              </Link>
+            </Button>
             <a
               href={phoneHref}
               className="group inline-flex items-center gap-3 rounded-full bg-white/15 px-5 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur transition hover:bg-white/20"
@@ -89,6 +100,9 @@ export function HeroSection() {
             </span>
             <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 shadow-lg backdrop-blur">
               Storm Damage Cleanup
+            </span>
+            <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 shadow-lg backdrop-blur">
+              In Business Since 2013
             </span>
           </motion.div>
         </motion.div>
@@ -117,7 +131,7 @@ export function HeroSection() {
               <span className="text-xs uppercase text-white/60"></span>
             </div>
             <div className="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3">
-              <span>Pruning / trimming incl. hedges</span>
+              <span>Pruning Trees & Hedges</span>
               <span className="text-xs uppercase text-white/60"></span>
             </div>
             <div className="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3">

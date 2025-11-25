@@ -264,7 +264,7 @@ Follow steps in `component-map-quickstart.md` under "Installation Commands"
 ### Contact Methods
 - **Phone**: 905-449-9019 (primary)
 - **Email**: Via contact form → Resend → Business email
-- **Social**: Instagram (@123_btc), Facebook, YouTube, LinkedIn
+- **Social**: Instagram (@btctrees), Facebook, YouTube, LinkedIn
 
 ### Service Areas (For SEO)
 - **Primary**: Oshawa, Clarington, Courtice
